@@ -94,12 +94,75 @@ void whiledo() {
         printf("You entered bad numbers");
 }
 
+void forexample() {
+    int exp;
+    int pow = 1;
+    for (exp = 0; exp < 16; ++exp) {
+        printf("2 to the power of %d is %d\n", exp, pow);
+        pow *= 2;
+    }
+}
 
+void forexample2() {
+    int number;
+    int max = -1000000;
+    int counter;
+    for (;;) {
+        scanf("%d", &number);
+        if (number == -1)
+            break;
+        counter++;
+        if (number > max)
+            max = number;
+    }
+    if (counter)
+        printf("The Largest number is %d\n", max);
+    else
+        printf("Duzgun eded daxil etmemisiniz");
+}
+
+void sortingarray() {
+    int number[5];
+    int i, aux;
+    int swapped;
+    for (i = 0; i < 5; ++i) {
+        printf("\n Enter value #%i\n", i + 1);
+        scanf("%d", &number[i]);
+    }
+
+    do{
+        swapped = 0;
+        for (i = 0; i<4;i++){
+            if(number[i]>number[i+1]){
+                swapped = 1;
+                aux=number[i];
+                number[i] = number[i+1];
+                number[i+1] = aux;
+            }
+        }
+    }while (swapped);
+    printf("\n After sorting : ");
+    for (i = 0; i < 5; ++i) {
+        printf(" number #%d %d" ,i,number[i]);
+    }
+    printf("\n");
+}
 
 int main(void) {
-//    kokalti();
+//  kokalti();
 //  whileExample();
-//    whileExample2();
-  whiledo();
+//  whileExample2();
+//  whiledo();
+//  forexample();
+//  forexample2();
+  sortingarray();
+
+
+
+
+
+
+
+
     return 0;
 }
